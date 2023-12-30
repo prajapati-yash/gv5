@@ -1,0 +1,8 @@
+{
+  "optimism": {
+    "OptimismGovernorV5": {
+      "address": "0x160B4C20B08299CeE42925c74181eB0861450aD4",
+      "startBlock": 96415083
+    }
+  }
+}
