@@ -26,7 +26,7 @@ import {
   VotingDelaySet,
   VotingPeriodSet
 } from "../generated/schema"
-
+import { Bytes } from "@graphprotocol/graph-ts";
 export function handleInitialized(event: InitializedEvent): void {
   let entity = new Initialized(
     event.transaction.hash.concatI32(event.logIndex.toI32())
@@ -78,7 +78,7 @@ export function handleProposalCreated1(event: ProposalCreated1Event): void {
   )
   entity.proposalId = event.params.proposalId
   entity.proposer = event.params.proposer
-  entity.targets = event.params.targets
+  entity.targets = changetype<Bytes[]>(event.params.targets)
   entity.values = event.params.values
   entity.signatures = event.params.signatures
   entity.calldatas = event.params.calldatas

@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: OptimismGovernorV5
@@ -28,7 +28,7 @@ dataSources:
         - VotingPeriodSet
       abis:
         - name: OptimismGovernorV5
-          file: ./abis/OptimismGovernorV5.json
+          file: OptimismGovernorV5\abis\OptimismGovernorV5.json
       eventHandlers:
         - event: Initialized(uint8)
           handler: handleInitialized
@@ -54,4 +54,4 @@ dataSources:
           handler: handleVotingDelaySet
         - event: VotingPeriodSet(uint256,uint256)
           handler: handleVotingPeriodSet
-      file: ./src/optimism-governor-v-5.ts
+      file: OptimismGovernorV5\OptimismGovernorV5.wasm
